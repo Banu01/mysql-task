@@ -1,0 +1,136 @@
+create table registration(courseid int FOREIGN KEY REFERENCES  course(courseid),studid int FOREIGN KEY REFERENCES student(studid),DOJ DATE not null);
+
+
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL PRIMARY KEY,
+    OrderNumber int NOT NULL,
+    PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+);
+
+
+
+
+
+
+
+
+
+
+
+SQL Assignments
+
+Table Structures
+Course:
+                   CourseId                                             NUMBER(4)-Primary Key
+	   CourseName			VARCHAR2(20) values 
+					   BA, BSC, BCOM, BTECH, MCOM,MSC,MA,
+					   MCA, MBA, MSIT
+	   Duration			NUMBER(in months) 
+    valid values 1 to 5
+	   Fees				NUMBER(7,2) not null
+
+Student:
+	  StudId				NUMBER(4)-Primary Key
+                  FirstName			VARCHAR2(20) not null
+	  LastName			VARCHAR2(20)
+	  Street				VARCHAR2(20) 
+	  City				VARCHAR2(20)  not null
+	  DOB				DATE not null
+
+Registration:
+	  CourseID			NUMBER(4)-Foreign Key
+	  StudID    			NUMBER(4)-Foreign Key
+	  DOJ				DATE  not null 
+       		Primary Key(CourseID, StudID)
+ 
+
+Records:
+
+Course:
+CourseID		CourseName		Duration		Fees
+
+1001			Java			4			5000.00
+1002			C++			2			4000.00
+1003			Linux and C		3			4000.00 
+1004			Oracle			2			3000.00
+1005			Web			6			10000.00
+
+Student:
+StudID    First Name	LastName      Street	  	     City           	  DOB
+
+3001        Dileep           	  Kumar       AnnaNagar    		Banglore     	10-MAR-1979
+3002        Anand         	  Kumar       IndiraNagar 		Bangalore    	19-JAN-1978
+3003        Bala             	  Krishnan    KPNagar    		Chennai       	03-JAN-1980
+3004        Gowri         	  Shankar     AnnaNagar    		Coimbatore 	22-DEC-1977
+3005        Priya             	   Menon       JPNagar         		Cochin        	12-FEB-1980
+3006        Prem           	   Kumar       MGNagar      		Coimbatore  	17-MAY-1977
+3007        Rahul         	   Dravid       KPNagar       		Chennai       	08-OCT-1977
+3008        John           	   Dravid        MGColony   		Chennai       	15-SEP-1980
+3009        Abdul          	   Raheem      JBNagar       		Bangalore    	19-JAN-1978
+
+Registration:
+
+CouseID  				StudID 				DOJ
+1001 					3004				10-MAR-1999
+1001 					3005				10-MAR-1999
+1002					3002				18-APR-1999
+1002					3003				18-APR-1999
+1002					3008				18-APR-1999
+1003					3001				06-JUN-1999
+1003 					3004 				06-JUN-1999
+1003					3006				06-JUN-1999
+1004					3005				10-MAR-1999
+1004					3007				10-MAR-1999
+1004                                    			3008				10-MAR-1999
+1005					3004				25-MAY-1999
+1005					3005				25-MAY-1999
+
+Note:      
+         Create the above specified tables with the constraints and insert the specified records.
+
+Queries:
+
+1.	Write a SQL query to add a field – Age NUMBER(3) on to the STUDENT table.
+2.	Write a SQL query to add a constraint in COURSE table to check the fees entered is greater than zero.
+3.	Write a SQL query to calculate the value of the Age Field using the DOB field.
+4.	Write a SQL query to decrease the fees by Rs.500 whose duration is less than or equal to 3 months.
+5.	Write a SQL query to delete the student whose LastName is ‘David’ and the city is ‘Chennai’.
+6.	Write a SQL query to display all the records from the COURSE table.
+7.	Write a SQL query to display the firstname,lastname and contact them to display as a full name from the STUDENT Table.
+8.	Write a SQL query to display the details of the course ‘C++’ from the COURSE Table.
+9.	Write a SQL query to display the details from the COURSE Table, which has a fees more than 4000.
+10.	 Write a SQL query to display the details fom the COURSE table, which has a duration of 2 to 4 months.
+11.	 Write a SQL query to display the students details whose birthday lies in the months between APR and SEP.
+12.	 Write a SQL query to display the details from the COURSE table which has the duration of 2 months and has a fees of more than 3000.
+13.	 Write a SQL query to display the details of the students whose IDs are 3002,3004 and 3005 from the STUDENT table.
+14.	 Write a SQL query to display the details from the STUDENT Table who has the same last name as ‘Kumar’.
+15.	 Write a SQL query to display the details from the STUDENT Table whose firstName starts with ‘A’.
+16.	 Write a SQL query to display the details from the STUDENT Table who came from ‘Bangalore’ City and has the LastName as ‘Kumar’.
+17.	 Write a SQL query to display the details from the STUDENT Table whose street name ends with ‘Nagar’.
+18.	 Write a SQL query to display the details of students ‘Dileep’ and ‘Abdul’ from the STUDENT Table.
+19.	 Write a SQL query to display the eldest student.
+20.	 Write a SQL query to display the details of the students whose ID is other than 3004 and 3006 from the STUDENT table.
+21.	 Write a SQL query to display the maximum, minimum and the average fees from the COURSE table.
+22.	 Write a SQL query to display the total number of students from STUDENT table.
+23.	 Write a SQL query to display the cities from the STUDENT table and each city should be displayed only once.
+24.	 Write a SQL query to display all the student details in the order of their DOB in descending order.
+25.	 Write a SQL query to display the total number of students who joined on 10-MAR-1999.
+26.	 Write a SQL query to display the first name in uppercase, lowercase and in propercase.
+27.	 Write a SQL query to display the last 3 characters from the first name.
+28.	 Write a SQL query to display the total number of Students for each course.
+29.	 Write a SQL query to display the students IDs who have joined for more than one course.
+30.	 Write a SQL query to display all student details whose first name is of 4 characters length.
+
+
+SUBQUERIES AND JOINS:
+
+1.	Write a SQL query to display the course details whose fees is lesser than the maximum fees.
+2.	Write a SQL query to display the students who are elder to ‘BalaKrishnan’.
+3.	Write a SQL query to calculate the total fees collected from the students who are coming from the city ‘Bangalore’.
+4.	Write a SQL query to display the student firstname and the course name for each student.
+5.	Write a SQL query to find the courses which have the same duration.
+6.	Write a SQL query to display the completing date of each course using DOJ and duration.
+7.	Write a SQL query to display the second maximum fees.
+8.	Write a SQL query to display the studentID and the total fees paid by each student.
+9.	Write a SQL query to display the courseID and the total fees collected from each course.   
